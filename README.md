@@ -1,6 +1,6 @@
 ## Description
 
-This project is a basic foundation for a Java SpringBoot project against a Postgres database.
+This project is a basic foundation for a Java SpringBoot project against a Postgres database. The theme is a random dungeon generator for a fantasy tabletop roleplaying game.
 
 
 ### Dependencies
