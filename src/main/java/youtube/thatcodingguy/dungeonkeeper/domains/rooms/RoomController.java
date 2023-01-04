@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/rooms") // localhost:8080/rooms
 public class RoomController {
@@ -19,7 +17,7 @@ public class RoomController {
     }
 
     @GetMapping
-    public List<Room> getRooms(){
+    public Iterable<Room> getRooms() {
         return roomService.getAllRooms();
     }
 }

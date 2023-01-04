@@ -1,24 +1,24 @@
 package youtube.thatcodingguy.dungeonkeeper.domains.rooms;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
-public class RoomServiceImpl implements RoomService{
+public class RoomServiceImpl implements RoomService {
 
+    RoomRepository roomRepository;
 
-    public RoomServiceImpl() {
+    @Autowired
+    public RoomServiceImpl(RoomRepository roomRepository) {
+        this.roomRepository = roomRepository;
     }
 
-    public List<Room> getAllRooms() {
-        Room myRoom = new Room("Throne Room");
-
-        List<Room> roomList = new ArrayList<>();
-
-        roomList.add(myRoom);
-
-        return roomList;
+    /**
+     * Contacts the database to retrieve all rooms.
+     *
+     * @return an iterable of rooms
+     */
+    public Iterable<Room> getAllRooms() {
+        return roomRepository.findAll();
     }
 }

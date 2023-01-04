@@ -22,8 +22,7 @@ public class DungeonKeeperApplication {
     public CommandLineRunner demo(RoomRepository roomRepository) {
         return (args) -> {
             roomRepository.save(new Room("Abandoned Barracks"));
+            roomRepository.save(new Room("Throne Room"));
         };
-
-
     }
 }
