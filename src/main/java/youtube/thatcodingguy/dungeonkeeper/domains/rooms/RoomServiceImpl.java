@@ -21,4 +21,15 @@ public class RoomServiceImpl implements RoomService {
     public Iterable<Room> getAllRooms() {
         return roomRepository.findAll();
     }
+
+    /**
+     * Calls the room repostiory to save a new room to the database.
+     *
+     * @param room - room to persist to the db
+     * @return
+     */
+    @Override
+    public Room createRoom(Room room) {
+        return roomRepository.save(room);
+    }
 }

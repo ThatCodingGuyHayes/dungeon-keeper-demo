@@ -11,12 +11,12 @@ import youtube.thatcodingguy.dungeonkeeper.domains.rooms.RoomRepository;
 @SpringBootApplication
 public class DungeonKeeperApplication {
 
+    @Autowired
+    RoomRepository roomRepository;
+
     public static void main(String[] args) {
         SpringApplication.run(DungeonKeeperApplication.class, args);
     }
-
-    @Autowired
-    RoomRepository roomRepository;
 
     @Bean
     public CommandLineRunner demo(RoomRepository roomRepository) {
