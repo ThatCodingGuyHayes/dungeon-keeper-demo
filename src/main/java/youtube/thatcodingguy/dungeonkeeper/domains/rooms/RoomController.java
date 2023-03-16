@@ -18,7 +18,7 @@ public class RoomController {
     /**
      * Defines the getAllRooms endpoint.
      *
-     * @return
+     * @return - a list of all rooms
      */
     @GetMapping
     public Iterable<Room> getRooms() {
@@ -29,11 +29,24 @@ public class RoomController {
      * Defines the post endpoint for Rooms.
      *
      * @param room - room to persist
-     * @return
+     * @return - posted room
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Room createRoom(@RequestBody Room room) {
         return roomService.createRoom(room);
+    }
+
+    /**
+     * Exposes an endpoint for editing a room
+     *
+     * @param room - information to be updated in the database
+     * @param id   - id of the object to updated
+     * @return - the updated object
+     */
+    @PutMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Room editRoom(@RequestBody Room room, @PathVariable Long id) {
+        return roomService.editRoom(room, id);
     }
 }

@@ -32,4 +32,17 @@ public class RoomServiceImpl implements RoomService {
     public Room createRoom(Room room) {
         return roomRepository.save(room);
     }
+
+    /**
+     * Updates a room by id.
+     *
+     * @param room - new data for the object
+     * @param id   - id of the object to be updated
+     * @return - the updated object
+     */
+    @Override
+    public Room editRoom(Room room, Long id) {
+        room.setId(id);
+        return roomRepository.save(room);
+    }
 }
