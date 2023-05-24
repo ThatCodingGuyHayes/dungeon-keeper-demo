@@ -49,4 +49,16 @@ public class RoomController {
     public Room editRoom(@RequestBody Room room, @PathVariable Long id) {
         return roomService.editRoom(room, id);
     }
+
+    /**
+     * Exposes an endpoint for deleting a room
+     *
+     * @param id - id of the object to be deleted
+     * @return - 204 No Content
+     */
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteRoom(@PathVariable Long id) {
+        roomService.deleteRoom(id);
+    }
 }

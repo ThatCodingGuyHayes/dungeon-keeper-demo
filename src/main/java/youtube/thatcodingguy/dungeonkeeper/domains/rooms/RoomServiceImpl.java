@@ -45,4 +45,16 @@ public class RoomServiceImpl implements RoomService {
         room.setId(id);
         return roomRepository.save(room);
     }
+
+    /**
+     * Deletes the room by id.
+     *
+     * @param id - id of the object to be deleted
+     * @return - true if successful
+     */
+    @Override
+    public boolean deleteRoom(Long id) {
+        roomRepository.deleteById(id);
+        return true;
+    }
 }

@@ -7,4 +7,6 @@ public interface RoomService {
     Room createRoom(Room room);
 
     Room editRoom(Room room, Long id);
+
+    boolean deleteRoom(Long id);
 }
